@@ -59,7 +59,7 @@ This analysis will produce 4 different files of charts.
 - all sentences (unfiltered): ```python keyword_analysis.py``` --> this will take some time (up to 5 mins depending on the hardware).
 
 * select a specification (default = all): ```python keyword_analysis.py -s autoid```  
-        specification options: "all", "autoid", "iolink", "isa95", "machinetools", "machinevision1", "machinevision2", "packml", "padim", "profinet", "robotics", "uafx", "weihenstephan"
+        specification options: "all", "autoid", "iolink", "isa95", "machinetools", "machinevision1", "machinevision2", "packml", "padim", "profinet", "robotics", "uafx", and "weihenstephan"
 
 
 * #### filter sentences given a selected specification
@@ -74,11 +74,14 @@ This analysis will produce 4 different files of charts.
 *decreasing threshold will likely to lead to less keywords to be used during computation
 
 ## 3. Entity Analysis
-In order to run entity analysis, the following commands can be called. 
+There are two aims of antity analysis:
+(i) to determine the distribution of entity counts in sentences for each entity category in each companion specification (datasheet); (ii) to find the correlation between different companion specifications in terms of entity distribution.
 
-* for all entity categories: ```python entity_analysis.py --entity_name all```
+In order to run entity analysis, the following command can be called. 
 
-* for a specfict entity category call to generate heatmap: ```python entity_analysis.py --entity_name information_model```
+* extraction the both distributions for all (or selected) entity categories in each companion specification and the heatmaps for rule sentences and non-rule sentences ```python entity_analysis.py --entity_name <entity_name>```
+
+  <entity_name> options: "information_model", "relation", "constraint", "quotes", "number", and "all". the default is "all".
 
 There will be two output folders for this purpose: 
 1.  `output/entity_analysis/distribution_barchart/`
