@@ -2,7 +2,7 @@
 This repository provides four different analyses for the OKE Dataset introduced in Tufek Ozkaya et al. (2023). 
 
 # Dataset
-The OPC UA Knowledge Extraction (OKE) Dataset is a dataset specifically created for sentence classification, named entity recognition and disambiguation, and entity linking. To learn more about the dataset and download it, please visit this [link](https://zenodo.org/records/10284578). Once downloaded the dataset, please ensure that you place the files in the "oke_dataset/excel/" directory before running the analysis scripts.
+The OPC UA Knowledge Extraction (OKE) Dataset is a dataset specifically created for sentence classification, named entity recognition and disambiguation (NERD), and entity linking. To learn more about the dataset and download it, please visit this [link](https://zenodo.org/records/10284578). Once downloaded the dataset, please ensure that you place the files in the "oke_dataset/excel/" directory before running the analysis scripts.
 
 Files should be located as described below.
 
