@@ -69,7 +69,7 @@ This analysis will produce 4 different files of charts.
 
 *decreasing threshold will likely to lead to less keywords to be used during computation
 
-# 3. Entity Analysis
+## 3. Entity Analysis
 In order to run entity analysis, the following commands can be called. 
 
 * for all entity categories: `python entity_analysis.py --entity_name all`
