@@ -78,7 +78,7 @@ def generate_filename(args, prefix):
     if args.filter_samples:
         filename += "_filtered"
         if args.only_rules is not None:
-            if args.only_rules == "y":
+            if args.only_rules:
                 filename += "_rules"
             else:
                 filename += "_non_rules"
