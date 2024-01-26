@@ -57,7 +57,7 @@ def save_comparison_heatmap(comparison_df, file_path):
 
 
 def generate_filename(filename, args):
-    filename = "spec_analysis"
+    filename = "specification_analysis"
     if args.filter_samples:
         filename += "_filtered"
         if args.only_rules is not None:
@@ -111,7 +111,7 @@ def run(args: argparse.Namespace):
         dtype=float,
     )
 
-    filename = generate_filename("spec_analysis", args)
+    filename = generate_filename("specification_analysis", args)
 
     target = os.path.join(args.output_path, "specification_analysis/", filename)
 
