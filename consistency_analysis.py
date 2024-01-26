@@ -155,7 +155,7 @@ def run(args: argparse.Namespace):
     if not os.path.exists(args.output_path):
         os.makedirs(args.output_path)
 
-    target = os.path.join(args.output_path, "keyword_analysis/")
+    target = os.path.join(args.output_path, "consistency_analysis/")
     if not os.path.exists(target):
         os.makedirs(target)
 
@@ -180,7 +180,7 @@ def run(args: argparse.Namespace):
 
     generated_and_save_chart(
         data=hmap,
-        file_path=os.path.join(args.output_path, "keyword_analysis/", output_filename),
+        file_path=os.path.join(args.output_path, "consistency_analysis/", output_filename),
         top_n=args.top_n,
         title="Most used keywords",
     )
@@ -197,7 +197,7 @@ def run(args: argparse.Namespace):
     output_filename = generate_filename(args, "filtered-mostcommonwords")
     generated_and_save_chart(
         data=hmap_filtered,
-        file_path=os.path.join(args.output_path, "keyword_analysis/", output_filename),
+        file_path=os.path.join(args.output_path, "consistency_analysis/", output_filename),
         top_n=args.top_n,
         title="Most used keywords, filtered by inclusion",
     )
@@ -209,7 +209,7 @@ def run(args: argparse.Namespace):
     output_filename = generate_filename(args, "multiple-category-keywords")
     generated_and_save_chart(
         data=multiple_categoried_keywords,
-        file_path=os.path.join(args.output_path, "keyword_analysis/", output_filename),
+        file_path=os.path.join(args.output_path, "consistency_analysis/", output_filename),
         top_n=args.top_n,
         title="Keywords assigned to more than 2 categories",
     )
@@ -221,7 +221,7 @@ def run(args: argparse.Namespace):
     output_filename = generate_filename(args, "most-conflicting-keywords")
     generated_and_save_chart(
         data=most_conflicting_keywords,
-        file_path=os.path.join(args.output_path, "keyword_analysis/", output_filename),
+        file_path=os.path.join(args.output_path, "consistency_analysis/", output_filename),
         top_n=args.top_n,
         title="Most conflicting keywords",
         preserve_order=True,

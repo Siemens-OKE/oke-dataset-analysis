@@ -9,6 +9,7 @@ import util
 
 
 config = util.load_config()
+plt.rcParams["figure.figsize"] = (14, 13)
 
 
 class SentenceGroup:
@@ -54,7 +55,8 @@ def plot_dist(sp, sn, input_file, output_dir):
         figsize=(8, 12),
         dpi=80,
     )
-    fig.suptitle(input_file_name)
+    formatted_filename = get_key_of_dict(input_file_name)
+    fig.suptitle(formatted_filename)
     labels = ["rule sentence", "non-rule sentence"]
     colors = ["red", "tan"]
     ax0.hist(
@@ -118,7 +120,7 @@ def plot_dist(sp, sn, input_file, output_dir):
     ax4.locator_params(integer=True)
 
     plt.subplots_adjust(left=0.1, bottom=0.1, top=0.9, wspace=0.4, hspace=0.4)
-    plt.savefig(f"{output_dir}{input_file_name}.png")
+    plt.savefig(f"{output_dir}{formatted_filename}.png")
     plt.close()
 
 
@@ -209,6 +211,7 @@ def draw_heatmap(input_files, output_dir, dict_entity, entity_name):
         dict_n[file_names[i]] = sn
         i += 1
 
+    formatted_filenames = [get_key_of_dict(filename) for filename in file_names]
     res_arr = get_heap_elements(dict_p, file_names)
     ent = res_arr[dict_entity[entity_name]]
     ax = plt.axes()
@@ -217,8 +220,8 @@ def draw_heatmap(input_files, output_dir, dict_entity, entity_name):
         cosine_similarity(ent),
         annot=True,
         mask=mask,
-        xticklabels=file_names,
-        yticklabels=file_names,
+        xticklabels=formatted_filenames,
+        yticklabels=formatted_filenames,
         ax=ax,
         fmt=".2f",
     )
@@ -235,8 +238,8 @@ def draw_heatmap(input_files, output_dir, dict_entity, entity_name):
         cosine_similarity(ent),
         annot=True,
         mask=mask,
-        xticklabels=file_names,
-        yticklabels=file_names,
+        xticklabels=formatted_filenames,
+        yticklabels=formatted_filenames,
         ax=ax,
         fmt=".2f",
     )
@@ -246,6 +249,14 @@ def draw_heatmap(input_files, output_dir, dict_entity, entity_name):
         output_dir + entity_name + "_non_rule_sentence_heatmap.png", dpi=fig2.dpi
     )
     fig2.clear()
+
+
+def get_key_of_dict(value: str) -> str:
+    filenames = config.get("FILENAMES", {})
+    # -5 to cut '.xlsx'
+    return next(
+        (k for k, v in filenames.items() if v[:-5].lower() == value.lower()), ""
+    )
 
 
 def run(args: argparse.Namespace):
@@ -315,7 +326,7 @@ if __name__ == "__main__":
         "--output_path",
         type=str,
         help="output directory where file will be saved in",
-        default="output/entity_analysis/",
+        default="output/entity_distribution_analysis/",
     )
 
     _parser.add_argument(

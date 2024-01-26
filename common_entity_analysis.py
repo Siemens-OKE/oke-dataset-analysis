@@ -104,7 +104,7 @@ def cal_cosine_sim(
 
 
 def generate_filename(feature_name, args_):
-    filename = "feature_analysis"
+    filename = "common_entity_analysis"
     if args_.filter_samples:
         filename += "_filtered"
         if args_.only_rules is not None:
@@ -117,7 +117,7 @@ def generate_filename(feature_name, args_):
 
     filename += f"_{feature_name}.png"
 
-    return os.path.join(args_.output_path, "feature_analysis/", filename)
+    return os.path.join(args_.output_path, "common_entity_analysis/", filename)
 
 
 def run(args_: argparse.Namespace):
@@ -127,7 +127,7 @@ def run(args_: argparse.Namespace):
     if not os.path.exists(args.output_path):
         os.makedirs(args.output_path)
 
-    target = os.path.join(args.output_path, "feature_analysis/")
+    target = os.path.join(args.output_path, "common_entity_analysis/")
     if not os.path.exists(target):
         os.makedirs(target)
 

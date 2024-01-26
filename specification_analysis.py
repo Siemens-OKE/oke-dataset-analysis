@@ -50,9 +50,6 @@ def save_comparison_heatmap(comparison_df, file_path):
         mask=mask,
     )
 
-    ax.xaxis.set_ticks_position("top")
-    ax.xaxis.set_label_position("top")
-
     plt.xticks(rotation=90)
 
     plt.savefig(file_path)
