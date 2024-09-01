@@ -8,7 +8,7 @@ The motivation of the analyses described below is to:
 3. Just by using the annotated entities, and their frequencies, generating heatmap(s) to compute similarity score between companion specifications in [common entity analysis](#3-common-entity-analysis)
 
 
-# [Dataset](#dataset)
+# Dataset
 The OPC UA Knowledge Extraction (OKE) Dataset is a dataset specifically created for sentence classification, named entity recognition and disambiguation (NERD), and entity linking. To learn more about the dataset and download it, please visit this [link](https://zenodo.org/records/10284578) and get the latest version of it. After downloading the dataset, please make sure to place the files in the `./oke_dataset/` directory before running the analysis scripts.
 
 The files should appear in the following hierarchy:
@@ -29,6 +29,8 @@ The files should appear in the following hierarchy:
 ## Prerequisites
 
 Make sure that you have `python >= 3.9` and install the `requirements.txt`.
+
+# Analysis
 
 ## 1. Keyword Analysis
 
