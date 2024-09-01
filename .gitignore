@@ -1,0 +1,6 @@
+# .gitignore  
+# Ignore all __pycache__ directories  
+/__pycache__/  
+  
+# Alternatively, you can specify __pycache__ only in the oke_dataset directory  
+oke_dataset/**
