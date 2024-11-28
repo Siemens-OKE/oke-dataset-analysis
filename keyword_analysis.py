@@ -16,7 +16,7 @@ def generated_and_save_chart(
     categories=config["ENTITY_COLS"] + ["not_included"],
     preserve_order: bool = False,
 ) -> None:
-    plt.rcParams["figure.figsize"] = (14, 13)
+    plt.rcParams["figure.figsize"] = (17, 4)
     keywords = list(data.keys())
     if top_n != -1:
         if not preserve_order:
@@ -68,7 +68,8 @@ def generated_and_save_chart(
             for keyword, occurrence in zip(keywords, occurrences)
         ]
     )
-    ax.legend(fancybox=True, framealpha=0.3)
+    ax.legend(fancybox=True, framealpha=0.3, loc='upper left', bbox_to_anchor=(1, 1))
+    
 
     plt.savefig(file_path)
     print(f"Image saved to {file_path} successfully!")
