@@ -2,7 +2,7 @@
   
 his document is prepared for OKE dataset annotators. Twelve different OPC UA companion specifications, technical documents were utilized for the OKE Dataset. These include PackML, Robotics, PROFINET, Machine Tools, Weihenstephan, IOLink, FX, Machine Vision CCM[^1], Machine Vision AMCM[^2], AutoID, ISA95, and PADIM. Each document will be annotated by two annotators independently, except for stabilizing the input. The following steps should be followed:  
   
-For more information, please visit [OPC Foundation Developer Tools](https://opcfoundation.org/developer-tools/documents).  
+In order to get the PDFs of these companion specifications, please visit [OPC Foundation Developer Tools](https://opcfoundation.org/developer-tools/documents).  
   
 [^1]: Control, configuration management, recipe management, result management  
 [^2]: Asset management and condition monitoring  
